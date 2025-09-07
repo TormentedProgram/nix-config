@@ -10,7 +10,10 @@
   # Programs natively supported by home-manager.
   # They can be configured in `programs.*` instead of using home.packages.
   programs = {
-    thunderbird.enable = true;
+    thunderbird = {
+      enable = true;
+      profiles = {};
+    };
   };
 
   # Services natively supported by home-manager.
