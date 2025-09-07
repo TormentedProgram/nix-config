@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     teams-for-linux
     virtualbox
+    onlyoffice-desktopeditors
     jetbrains.pycharm-community-bin
   ];
 
