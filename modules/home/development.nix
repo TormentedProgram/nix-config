@@ -7,6 +7,7 @@
     just
     jetbrains.idea-community-bin
     jetbrains.rust-rover
+    micromamba
   ];
 
   # Programs natively supported by home-manager.

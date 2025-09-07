@@ -20,4 +20,10 @@
   # Services natively supported by home-manager.
   # They can be configured in `services.*` instead of using home.packages.
   services = {};
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "steam"
+      "steam-unwrapped"
+    ];
 }
