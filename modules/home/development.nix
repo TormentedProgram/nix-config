@@ -5,6 +5,8 @@
   # Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
     just
+    jetbrains.idea-community-bin
+    jetbrains.rust-rover
   ];
 
   # Programs natively supported by home-manager.

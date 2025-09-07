@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     teams-for-linux
     virtualbox
+    jetbrains.pycharm-community-bin
   ];
 
   # Programs natively supported by home-manager.
