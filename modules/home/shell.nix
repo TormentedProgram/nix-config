@@ -1,5 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [];
+
   programs = {
     # on macOS, you probably don't need this
     bash = {
@@ -16,7 +18,7 @@
       syntaxHighlighting.enable = true;
       enableCompletion = true;
       envExtra = ''
-        # Custom ~/.zshenv goes here
+        fastfetch
       '';
       profileExtra = ''
         # Custom ~/.zprofile goes here
@@ -29,8 +31,24 @@
       '';
     };
 
+    # Required linux user tool
+    fastfetch.enable = true;
+
     # Type `z <pat>` to cd to some directory
     zoxide.enable = true;
+
+    # Better `cat`
+    bat.enable = true;
+
+    # Better `ls`
+    eza.enable = true;
+
+    # Type `<ctrl> + r` to fuzzy search your shell history
+    fzf.enable = true;
+    jq.enable = true;
+
+    # Better `grep`
+    ripgrep.enable = true;
 
     # Better shell prompt!
     starship = {

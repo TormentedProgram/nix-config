@@ -4,8 +4,7 @@
   #
   # Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
-    teams-for-linux
-    virtualbox
+    just
   ];
 
   # Programs natively supported by home-manager.

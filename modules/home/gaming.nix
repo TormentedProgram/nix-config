@@ -4,8 +4,13 @@
   #
   # Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
-    teams-for-linux
-    virtualbox
+    prismlauncher
+    steam
+    lutris
+    protonup-qt
+    mcpelauncher-client
+    umu-launcher
+    dolphin-emu
   ];
 
   # Programs natively supported by home-manager.
