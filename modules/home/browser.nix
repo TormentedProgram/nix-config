@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   # Nix packages to install to $HOME
   #
@@ -11,7 +11,7 @@
     librewolf = {
       enable = true;
       profiles.default = {
-        extensions.packages = with pkgs.nur.rycee.firefox-addons; [
+        extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           ublock-origin
           sponsorblock
           darkreader
