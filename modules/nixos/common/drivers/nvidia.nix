@@ -27,5 +27,5 @@
       modesetting.enable = true;
       nvidiaSettings = true;
     };
-  }
+  };
 }
