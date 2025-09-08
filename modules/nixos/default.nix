@@ -4,5 +4,6 @@
 {
   imports = [
     flake.inputs.self.nixosModules.common
+    flake.inputs.self.nixosModules.common.drivers
   ];
 }
