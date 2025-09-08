@@ -9,6 +9,7 @@
     jetbrains.rust-rover
     micromamba
     gittyup
+    vscodium-fhs
   ];
 
   # Programs natively supported by home-manager.
