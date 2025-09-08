@@ -1,4 +1,7 @@
-{ inputs, pkgs, ... }:
+{ flake, pkgs, ... }:
+let
+  inherit (flake) inputs;
+in
 {
   # Nix packages to install to $HOME
   #
@@ -14,7 +17,12 @@
         extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           ublock-origin
           sponsorblock
+          return-youtube-dislikes
+          traduzir-paginas-web # Translate Web Pages
           darkreader
+          violentmonkey
+          user-agent-string-switcher
+          re-enable-right-click
         ];
         id = 0;
         settings = {
