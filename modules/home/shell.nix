@@ -7,7 +7,7 @@
     bash = {
       enable = true;
       initExtra = ''
-        # Custom bash profile goes here
+        fastfetch
       '';
     };
 
@@ -18,7 +18,7 @@
       syntaxHighlighting.enable = true;
       enableCompletion = true;
       envExtra = ''
-        fastfetch
+        
       '';
       profileExtra = ''
         # Custom ~/.zprofile goes here
