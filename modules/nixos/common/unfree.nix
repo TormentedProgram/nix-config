@@ -7,6 +7,7 @@
       "steam"
       "steam-unwrapped"
       "chapterskip"
-      "evafast"
+      "evafast" 
+      "rust-rover"
     ];
 }
