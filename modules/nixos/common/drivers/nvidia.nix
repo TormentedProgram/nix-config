@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   boot.kernelParams = [
     "nvidia-drm.modeset=1" # Enables kernel modesetting for the proprietary NVIDIA driver.
