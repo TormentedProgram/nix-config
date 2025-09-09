@@ -4,4 +4,10 @@
     ffmpeg
     imagemagick
   ];
+
+  services = {
+    navidrome = {
+      enable = true;
+    };
+  };
 }
