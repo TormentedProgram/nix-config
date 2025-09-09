@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = config.myusers
+  users.groups.libvirtd.members = config.myusers;
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
