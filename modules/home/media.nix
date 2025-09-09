@@ -13,6 +13,12 @@
   # They can be configured in `programs.*` instead of using home.packages.
   programs = {
     yt-dlp.enable = true;
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs; [
+        obs-studio-plugins.obs-pipewire-audio-capture
+      ];
+    };
     mpv = {
       enable = true;
 
