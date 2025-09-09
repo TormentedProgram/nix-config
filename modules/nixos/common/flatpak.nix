@@ -3,8 +3,12 @@
 {
   services.flatpak = {
     enable = true;
-    packages = [
-      "org.vinegarhq.Sober" 
-    ];
   };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.kdePackages.xdg-desktop-portal-kde
+    ];
+  }
 }
