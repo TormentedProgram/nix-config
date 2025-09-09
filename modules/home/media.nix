@@ -5,6 +5,8 @@
   # Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
     qimgv
+    feishin
+    nicotine-plus
   ];
 
   # Programs natively supported by home-manager.
