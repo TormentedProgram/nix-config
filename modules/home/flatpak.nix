@@ -1,6 +1,9 @@
-{ flake-inputs, pkgs, ... }:
+{ flake, pkgs, ... }:
+let
+  inherit (flake) inputs;
+in
 {
-  imports = [ flake-inputs.flatpaks.homeManagerModules.nix-flatpak ];
+  imports = [ inputs.flatpaks.homeManagerModules.nix-flatpak ];
 
   services.flatpak = {
     packages = [
