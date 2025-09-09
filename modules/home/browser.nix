@@ -18,7 +18,7 @@ in
           ublock-origin
           sponsorblock
           return-youtube-dislikes
-          traduzir-paginas-web # Translate Web Pages
+          # traduzir-paginas-web # Translate Web Pages
           darkreader
           violentmonkey
           user-agent-string-switcher
