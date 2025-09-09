@@ -8,6 +8,7 @@ in
   services.flatpak = {
     packages = [
       "org.vinegarhq.Sober"
+      "com.github.tchx84.Flatseal"
     ];
   };
 }
