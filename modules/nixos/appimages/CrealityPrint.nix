@@ -10,11 +10,6 @@
   appimageContents = pkgs.appimageTools.extract {
     inherit pname version src;
     postExtract = ''
-      # Create lib directory if it doesn't exist
-      mkdir -p $out/usr/lib
-
-      # Create symlink bzip2 library
-      ln -s ${pkgs.bzip2}/lib/libbz2.so.1 $out/usr/lib/libbz2.so.1.0
     '';
   };
 in
