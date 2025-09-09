@@ -5,6 +5,7 @@
   # Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
     kdePackages.filelight
+    file
   ];
 
   # Programs natively supported by home-manager.
