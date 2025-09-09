@@ -8,6 +8,8 @@
       enable = true;
       initExtra = ''
         fastfetch
+        alias ls="eza -1 -lh --icons --group-directories-first --no-permissions --no-user --time-style '+%_d %b %I:%M %p' --sort=modified --hyperlink -T -L=2"
+        alias grep="rg --hyperlink-format file"
       '';
     };
 
