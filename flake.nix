@@ -24,7 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
+    flatpaks.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
   };
 
   # Wired using https://nixos-unified.org/autowiring.html
