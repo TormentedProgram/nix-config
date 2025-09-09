@@ -1,16 +1,15 @@
 { pkgs, ... }:
 {
   # hopefully this imports my appimages automagically
-  imports =
-    with builtins;
-    map (fn: ../../appimages/${fn})
-      (attrNames (readDir ../../appimages/.));
+  imports = builtins.map (fn:
+    import (../../appimages/${fn}) { inherit pkgs; }
+  ) (builtins.attrNames (builtins.readDir ../../appimages/.));
 
   # Nix packages to install to $HOME
   #
   # Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
-    just
+    pkgs.just
     jetbrains.idea-community-bin
     jetbrains.rust-rover
     micromamba
