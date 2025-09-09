@@ -1,10 +1,5 @@
 { pkgs, ... }:
 {
-  # hopefully this imports my appimages automagically
-  imports = builtins.map (fn:
-    import (../../appimages/${fn}) { inherit pkgs; }
-  ) (builtins.attrNames (builtins.readDir ../../appimages/.));
-
   # Nix packages to install to $HOME
   #
   # Search for packages here: https://search.nixos.org/packages
@@ -15,7 +10,6 @@
     micromamba
     gittyup
     vscodium-fhs
-    crealityprint
   ];
 
   # Programs natively supported by home-manager.
