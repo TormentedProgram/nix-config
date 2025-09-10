@@ -1,41 +1,43 @@
 { pkgs, ... }:
 
 let
-  pname = "CrealityPrint";
-  version = "6.2.2";
+  pname = "creality-print";
+  version = "v6.2.2";
 
   src = pkgs.fetchurl {
-    url = "https://github.com/CrealityOfficial/CrealityPrint/releases/download/v${version}/CrealityPrint_Ubuntu2404-V${version}.3203-x86_64-Release.AppImage";
-    hash = "sha256:e53645779dcd591f83fd670cc152a22bc854aecdc065f9f6e3f0b93bf23cb37b";
+    url = "https://github.com/CrealityOfficial/CrealityPrint/releases/download/${version}/CrealityPrint_Ubuntu2004-${version}.3203-x86_64-Release.AppImage";
+    hash = "sha256:d683c561e94a9fa6296e489235e8311bed44b3b9d0b42ecd1e311fe22109f3fe";
   };
 
   appimageContents = pkgs.appimageTools.extract {
     inherit pname version src;
-    postExtract = ''
-      # optional adjustments
-    '';
   };
 
   crealityprint = pkgs.appimageTools.wrapType2 {
     inherit pname version src;
     pkgs = pkgs;
-    extraInstallCommands = ''
-      install -m 444 -D ${appimageContents}/${pname}.desktop -t $out/share/applications
-      substituteInPlace $out/share/applications/${pname}.desktop --replace 'Exec=AppRun' "Exec=${pname}"
-      cp -r ${appimageContents}/usr/share/icons $out/share
-    '';
     extraBwrapArgs = [ "--bind-try /etc/nixos/ /etc/nixos/" ];
     extraPkgs = pkgs_: with pkgs_; [
-      bzip2
+      libsoup_3
+      webkitgtk_4_0
       autoPatchelfHook
       libdeflate
-      asar
       (buildPackages.wrapGAppsHook.override { inherit (buildPackages) makeWrapper; })
     ];
   };
 in
 {
-  home.packages = with pkgs; [
-    crealityprint
-  ];
+  home.packages = with pkgs; [ creality-print ];
+  home.file.".local/share/applications/creality-print.desktop".text = ''
+    [Desktop Entry]
+    Name=CrealityPrint
+    GenericName=3D Printing Software from Nix-Appimage
+    Icon=CrealityPrint
+    Terminal=false
+    Exec=AppRun creality-print
+    Type=Application
+    MimeType=model/stl;application/vnd.ms-3mfdocument;application/prs.wavefront-obj;application/x-amf;
+    Categories=Graphics;3DGraphics;Engineering;Utility
+    StartupNotify=false
+  '';
 }
