@@ -18,10 +18,11 @@ let
     pkgs = pkgs;
     extraBwrapArgs = [ "--bind-try /etc/nixos/ /etc/nixos/" ];
     extraPkgs = pkgs_: with pkgs_; [
-      libsoup_3
+      libsoup_2_4
       webkitgtk_4_0
-      autoPatchelfHook
       libdeflate
+
+      autoPatchelfHook
       (buildPackages.wrapGAppsHook.override { inherit (buildPackages) makeWrapper; })
     ];
   };
@@ -34,7 +35,7 @@ in
     GenericName=3D Printing Software from Nix-Appimage
     Icon=CrealityPrint
     Terminal=false
-    Exec=AppRun creality-print
+    Exec=creality-print
     Type=Application
     MimeType=model/stl;application/vnd.ms-3mfdocument;application/prs.wavefront-obj;application/x-amf;
     Categories=Graphics;3DGraphics;Engineering;Utility
