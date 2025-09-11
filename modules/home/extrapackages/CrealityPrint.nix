@@ -2,10 +2,11 @@
 
 let
   pname = "creality-print";
-  version = "v6.2.2";
+  semver = "v6.2.2";
+  extraver = "3203";
 
   src = pkgs.fetchurl {
-    url = "https://github.com/CrealityOfficial/CrealityPrint/releases/download/${version}/CrealityPrint_Ubuntu2004-${version}.3203-x86_64-Release.AppImage";
+    url = "https://github.com/CrealityOfficial/CrealityPrint/releases/download/${semver}/CrealityPrint_Ubuntu2004-${semver}.${extraver}-x86_64-Release.AppImage";
     hash = "sha256:d683c561e94a9fa6296e489235e8311bed44b3b9d0b42ecd1e311fe22109f3fe";
   };
 
