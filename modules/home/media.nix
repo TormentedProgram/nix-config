@@ -8,6 +8,7 @@
     feishin
     nicotine-plus
     krita
+    qbittorrent # WARNING probably not the correct file to put this
   ];
 
   # Programs natively supported by home-manager.
