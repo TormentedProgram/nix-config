@@ -3,4 +3,6 @@
   terminal = "alacritty";
   fileManager = "thunar";
   browser = "librewolf";
+  imageViewer = "qimgv";
+  videoPlayer = "mpv";
 }
