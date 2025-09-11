@@ -1,6 +1,7 @@
 { pkgs, ... }:
 let
-  default_browser = "librewolf"; # WARNING somehow set this from a defaultApps.nix file or something cool like that
+  defaults = import ../../defaultApps.nix;
+  default_browser = defaults.browser;
 in
 {
   xdg.mime = {
