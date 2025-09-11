@@ -11,4 +11,6 @@
       thunar-volman
     ];
   };
+  
+  programs.partition-manager.enable = true;
 }
