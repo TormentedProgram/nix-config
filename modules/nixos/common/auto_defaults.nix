@@ -28,6 +28,7 @@ in
       "audio/mpeg" = "${defaults.videoPlayer}.desktop"; # please don't make me do all the mimetypes for mp3s
       "audio/wav" = "${defaults.videoPlayer}.desktop";
       "audio/flac" = "${defaults.videoPlayer}.desktop";
+      "audio/ogg" = "${defaults.videoPlayer}.desktop";
     };
   };
 
