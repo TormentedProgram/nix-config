@@ -3,6 +3,10 @@
   home.packages = with pkgs; [];
 
   programs = {
+    alacritty = {
+      enable = true;
+    };
+    
     # on macOS, you probably don't need this
     bash = {
       enable = true;

@@ -7,6 +7,7 @@
     qimgv
     feishin
     nicotine-plus
+    krita
   ];
 
   # Programs natively supported by home-manager.
