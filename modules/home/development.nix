@@ -6,7 +6,6 @@
   home.packages = with pkgs; [
     pkgs.just
     jetbrains.idea-community-bin
-    jetbrains.rust-rover
     micromamba
     gittyup
     vscodium-fhs
