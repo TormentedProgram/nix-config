@@ -7,8 +7,9 @@
     qimgv
     feishin
     nicotine-plus
-    krita
     qbittorrent # WARNING probably not the correct file to put this
+    krita
+    kdePackages.kdenlive
   ];
 
   # Programs natively supported by home-manager.
