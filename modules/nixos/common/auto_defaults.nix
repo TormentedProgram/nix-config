@@ -13,4 +13,10 @@ in
       "x-scheme-handler/unknown" = "${defaults.browser}.desktop";
     };
   };
+
+  environment.variables = {
+    EDITOR = "nano";
+    TERMINAL = "${defaults.terminal}";
+    DEFAULT_BROWSER = "${defaults.browser}";
+  };
 }
