@@ -13,7 +13,7 @@ let
     inherit pname version src;
   };
 
-  crealityprint = pkgs.appimageTools.wrapType2 {
+  creality-print = pkgs.appimageTools.wrapType2 {
     inherit pname version src;
     pkgs = pkgs;
     extraBwrapArgs = [ "--bind-try /etc/nixos/ /etc/nixos/" ];
