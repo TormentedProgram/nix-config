@@ -11,11 +11,20 @@ let
 
   appimageContents = pkgs.appimageTools.extract {
     inherit pname version src;
+    postExtract = ''
+      substituteInPlace $out/${pname}.desktop --replace 'Exec=AppRun' 'Exec=${pname}'
+    '';
   };
 
   creality-print = pkgs.appimageTools.wrapType2 {
     inherit pname version src;
     pkgs = pkgs;
+
+    extraInstallCommands = ''
+      install -m 444 -D ${appimageContents}/${pname}.desktop -t $out/share/applications
+      cp -r ${appimageContents}/usr/share/icons $out/share
+    '';
+
     extraBwrapArgs = [ "--bind-try /etc/nixos/ /etc/nixos/" ];
     extraPkgs = pkgs_: with pkgs_; [
       libsoup_2_4
@@ -29,16 +38,4 @@ let
 in
 {
   home.packages = with pkgs; [ creality-print ];
-  home.file.".local/share/applications/creality-print.desktop".text = ''
-    [Desktop Entry]
-    Name=CrealityPrint
-    GenericName=3D Printing Software from Nix-Appimage
-    Icon=CrealityPrint
-    Terminal=false
-    Exec=creality-print
-    Type=Application
-    MimeType=model/stl;application/vnd.ms-3mfdocument;application/prs.wavefront-obj;application/x-amf;
-    Categories=Graphics;3DGraphics;Engineering;Utility
-    StartupNotify=false
-  '';
 }
